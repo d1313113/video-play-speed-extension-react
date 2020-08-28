@@ -1,4 +1,6 @@
 dist/js/*
+dist/fonts/*
+dist/assets/*
 .vscode
 .idea
 storybook-static/*

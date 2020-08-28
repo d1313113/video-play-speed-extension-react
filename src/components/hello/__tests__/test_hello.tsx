@@ -3,8 +3,9 @@ import { Hello } from "../component";
 import renderer, { ReactTestRendererJSON } from "react-test-renderer";
 
 it("component renders", () => {
-    const tree: ReactTestRendererJSON | ReactTestRendererJSON[] | null = renderer
-        .create(<Hello />)
-        .toJSON();
-    expect(tree).toMatchSnapshot();
+  const tree:
+    | ReactTestRendererJSON
+    | ReactTestRendererJSON[]
+    | null = renderer.create(<Hello />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
