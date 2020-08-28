@@ -36,17 +36,12 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: "file-loader",
-            options: {
-              name: "[hash:5].[ext]",
-              outputPath: "../assets/",
-              publicPath: "/assets/"
-            }
-          },
-          {
             loader: "url-loader",
             options: {
-              limit: 8192
+              name: "[hash:5].[ext]",
+              limit: 8192,
+              outputPath: "../assets/",
+              publicPath: "/assets/"
             }
           }
         ]

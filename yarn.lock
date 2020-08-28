@@ -5415,14 +5415,6 @@ file-loader@^4.2.0:
     loader-utils "^1.2.3"
     schema-utils "^2.5.0"
 
-file-loader@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-6.0.0.tgz#97bbfaab7a2460c07bcbd72d3a6922407f67649f"
-  integrity sha1-l7v6q3okYMB7y9ctOmkiQH9nZJ8=
-  dependencies:
-    loader-utils "^2.0.0"
-    schema-utils "^2.6.5"
-
 file-system-cache@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/file-system-cache/download/file-system-cache-1.0.5.tgz#84259b36a2bbb8d3d6eb1021d3132ffe64cfff4f"
