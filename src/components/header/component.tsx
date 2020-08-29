@@ -29,9 +29,6 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
         onClick={handleReload}
         className="icon-reload"
         spin={spin}
-        style={{
-          fontSize: "20px"
-        }}
       />
     </header>
   );

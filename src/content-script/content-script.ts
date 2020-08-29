@@ -4,14 +4,22 @@ import {
   getVideosStatus,
   setVideoPause,
   setVideoPlay,
-  setVideoPlaybackRate
+  setVideoPlaybackRate,
+  setVideoMuted
 } from "./actions/videosPlaybackRate";
 import MessageSender = chrome.runtime.onMessage;
+
+interface Request {
+  idx: number;
+  action: string;
+  value?: number;
+  muted?: boolean;
+}
 
 browser.runtime.onMessage.addListener(
   // @ts-ignore
   (
-    request: { idx: number; action: string; value?: number },
+    request: Request,
     sender: typeof MessageSender,
     // @ts-ignore
     sendResponse
@@ -39,6 +47,14 @@ browser.runtime.onMessage.addListener(
         const { idx } = request;
         setVideoPause(idx);
         return;
+      }
+
+      case actionTypes.SWITCH_VIDEO_MUTED: {
+        const { idx, muted } = request;
+        if (muted != null) {
+          setVideoMuted(idx, muted);
+          return;
+        }
       }
     }
     throw new Error("Unhandled request: " + JSON.stringify(request));

@@ -6,7 +6,8 @@ export const enum actionTypes {
   GET_VIDEOS_STATUS = "GET_VIDEOS_STATUS",
   SET_VIDEO_PLAYBACK_RATE = "SET_VIDEO_PLAYBACK_RATE",
   SET_VIDEO_PLAY = "SET_VIDEO_PLAY",
-  SET_VIDEO_PAUSE = "SET_VIDEO_PAUSE"
+  SET_VIDEO_PAUSE = "SET_VIDEO_PAUSE",
+  SWITCH_VIDEO_MUTED = "SWITCH_VIDEO_MUTED"
 }
 
 export interface VideoStatus {
@@ -50,4 +51,12 @@ export function setVideoPlay(idx: number): void {
  */
 export function setVideoPause(idx: number): void {
   $$<HTMLVideoElement>("video")[idx].pause();
+}
+
+/**
+ * @param {number} idx
+ * @param {boolean} muted
+ */
+export function setVideoMuted(idx: number, muted: boolean): void {
+  $$<HTMLVideoElement>("video")[idx].muted = muted;
 }

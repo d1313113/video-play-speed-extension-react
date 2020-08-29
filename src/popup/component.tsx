@@ -19,7 +19,6 @@ export const Popup: FC = () => {
   const [scrollTop, setScrollTop] = useState<number>(0);
 
   const initPopUp = async (): Promise<void> => {
-    console.log(11111);
     const { id: tabId } = await getCurrentTab();
     if (tabId != null) {
       const resp: VideoStatus[] = await browser.tabs.sendMessage(tabId, {
@@ -69,6 +68,22 @@ export const Popup: FC = () => {
     }
   };
 
+  const handleSwitchVideoMuted = async (
+    idx: number,
+    muted: boolean
+  ): Promise<void> => {
+    const { id: tabId } = await getCurrentTab();
+
+    if (tabId != null) {
+      await browser.tabs.sendMessage(tabId, {
+        action: actionTypes.SWITCH_VIDEO_MUTED,
+        idx,
+        muted
+      });
+      initPopUp();
+    }
+  };
+
   const handleScroll = (html: HTMLElement): void => {
     try {
       const { scrollTop } = html;
@@ -104,6 +119,7 @@ export const Popup: FC = () => {
             onSetRate={handleSetVideoRate}
             onPlay={handleSetVideoPlay}
             onPause={handleSetVideoPause}
+            onMuted={handleSwitchVideoMuted}
           />
         )}
         {!!videoList.length && videoList.length > 5 && scrollTop < 30 && (

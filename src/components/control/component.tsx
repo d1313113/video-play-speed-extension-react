@@ -1,6 +1,11 @@
 import React, { FC } from "react";
 import { Slider, Button } from "antd";
-import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
+import {
+  PlayCircleOutlined,
+  PauseCircleOutlined,
+  AudioMutedOutlined,
+  AudioOutlined
+} from "@ant-design/icons";
 import { VideoStatus } from "@/content-script/actions/videosPlaybackRate";
 import "./styles.scss";
 
@@ -11,6 +16,7 @@ export interface ControlProps {
   onSetRate: (idx: number, value: number) => Promise<void>;
   onPlay: (idx: number) => Promise<void>;
   onPause: (idx: number) => Promise<void>;
+  onMuted: (idx: number, muted: boolean) => Promise<void>;
 }
 
 export const Control: FC<ControlProps> = (props: ControlProps) => {
@@ -52,6 +58,21 @@ export const Control: FC<ControlProps> = (props: ControlProps) => {
                   onClick={(): Promise<void> => props.onPause(index)}
                 />
               )}
+              {item.muted ? (
+                <AudioMutedOutlined
+                  className="icon-control middle"
+                  onClick={(): Promise<void> =>
+                    props.onMuted(index, !item.muted)
+                  }
+                />
+              ) : (
+                <AudioOutlined
+                  className="icon-control middle"
+                  onClick={(): Promise<void> =>
+                    props.onMuted(index, !item.muted)
+                  }
+                />
+              )}
               {RATES.map(rate => (
                 <Button
                   key={rate}
@@ -60,7 +81,7 @@ export const Control: FC<ControlProps> = (props: ControlProps) => {
                   type={rate === 1 ? "primary" : "default"}
                   disabled={rate === item.playbackRate}
                 >
-                  {rate === 1 ? "Reset" : `✖️${rate}倍`}
+                  {rate === 1 ? "Reset" : `✖️${rate}`}
                 </Button>
               ))}
             </div>

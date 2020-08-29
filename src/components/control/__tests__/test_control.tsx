@@ -18,11 +18,17 @@ it("component renders", () => {
   const onPause: jest.Mock<Promise<void>, [number]> = jest.fn((idx: number) =>
     Promise.resolve()
   );
+  const onMuted: jest.Mock<
+    Promise<void>,
+    [number, boolean]
+  > = jest.fn((idx: number, muted: boolean) => Promise.resolve());
+
   const props: ControlProps = {
     videoList,
     onSetRate,
     onPlay,
-    onPause
+    onPause,
+    onMuted
   };
 
   const tree:
