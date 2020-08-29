@@ -8,6 +8,15 @@ exports[`component renders 1`] = `
     className="col-lg-12"
   >
     <button
+      className="ant-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        123
+      </span>
+    </button>
+    <button
       className="btn btn-block btn-outline-dark"
       onClick={[Function]}
     >

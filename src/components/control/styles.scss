@@ -1,0 +1,34 @@
+@import "../../scss/theme/var";
+
+.control {
+  padding: 10px 30px 30px;
+  .title {
+    color: $--color-white;
+    font-size: $--size-middle;
+    padding-bottom: 10px;
+  }
+  .control-main {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 0 15px;
+    box-shadow: 19px 19px 38px #d4d4d4, -10px -10px 20px #ffffff;
+  }
+  .video-item {
+    border-bottom: 1px solid #D4DBED;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 0;
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+    .ant-slider {
+      margin: 0;
+    }
+    .rate-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

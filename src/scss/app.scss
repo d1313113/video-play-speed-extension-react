@@ -1,5 +1,7 @@
 @import '~antd/dist/antd.dark.css';
 @import '~antd/dist/antd.compact.css';
+@import "theme/light";
+@import "theme/dark";
 
 @font-face {
   font-family: 'Ayuthaya';
@@ -17,4 +19,13 @@
 
 * {
   font-family: 'Ayuthaya', 'Rajdhani-Regular', monospace;
+}
+
+/* 清除滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+html, body {
+  max-height: 400px;
 }

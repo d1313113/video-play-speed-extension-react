@@ -4,7 +4,8 @@ const path = require("path");
 module.exports = {
   entry: {
     backgroundPage: path.join(__dirname, "src/backgroundPage.ts"),
-    popup: path.join(__dirname, "src/popup/index.tsx")
+    popup: path.join(__dirname, "src/popup/index.tsx"),
+    contentScript: path.join(__dirname, "src/content-script/content-script.ts")
   },
   output: {
     path: path.join(__dirname, "dist/js"),
@@ -47,7 +48,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|woff2?|ttf|svg)$/, // 处理字体
+        test: /\.(eot|woff2?|ttf)$/, // 处理字体
         use: [
           {
             loader: "url-loader",

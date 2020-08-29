@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="41px" viewBox="0 0 41 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>button-play-1 copy 2</title>
+    <defs>
+        <linearGradient x1="24.41909%" y1="20.8200171%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D1E2F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Light-Mode" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.979999959">
+        <g id="Home_Standard" transform="translate(-278.000000, -246.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Group-6" transform="translate(24.000000, 113.000000)">
+                <g id="button-play-1-copy-2" transform="translate(254.000000, 133.000000)">
+                    <path d="M20.5,0 C9.17816263,0 0,9.17816263 0,20.5 C0,31.8218374 9.17816263,41 20.5,41 C31.8218374,41 41,31.8218374 41,20.5 C40.9877601,9.18323646 31.8167635,0.012239948 20.5,0 Z M28.7478333,22.02725 L16.138625,28.331 L16.138625,28.331 C15.6092083,28.5955504 14.9805814,28.5672375 14.4770903,28.2561656 C13.9735992,27.9450938 13.6669826,27.3955852 13.6666667,26.80375 L13.6666667,14.1928333 C13.6666667,13.6011855 13.9728349,13.0516697 14.4759146,12.7402891 C14.9789944,12.4289085 15.6073724,12.4000001 16.1369167,12.663875 L28.7495417,18.9625 C29.3320485,19.2507747 29.7005173,19.8446158 29.7001551,20.4945515 C29.6997923,21.1444872 29.3306613,21.7379169 28.7478333,22.0255417 L28.7478333,22.02725 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

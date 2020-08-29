@@ -1,0 +1,1 @@
+export { EmptyCard } from "./component";

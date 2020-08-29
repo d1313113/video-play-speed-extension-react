@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component renders 1`] = `
+<main
+  className="control"
+>
+  <div
+    className="title"
+  >
+    可拖动step调整速度
+  </div>
+  <section
+    className="control-main"
+  >
+    <div
+      className="video-item"
+    >
+      <div
+        className="ant-slider"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="ant-slider-rail"
+          style={Object {}}
+        />
+        <div
+          className="ant-slider-track"
+          style={
+            Object {
+              "left": "0%",
+              "right": "auto",
+              "width": "18.36734693877551%",
+            }
+          }
+        />
+        <div
+          className="ant-slider-step"
+        />
+        <div
+          aria-disabled={false}
+          aria-valuemax={5}
+          aria-valuemin={0.1}
+          aria-valuenow={1}
+          className="ant-slider-handle"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="slider"
+          style={
+            Object {
+              "left": "18.36734693877551%",
+              "right": "auto",
+              "transform": "translateX(-50%)",
+            }
+          }
+          tabIndex={0}
+        />
+        <div
+          className="ant-slider-mark"
+        />
+      </div>
+      <div
+        className="rate-wrapper"
+      >
+        <button
+          className="ant-btn ant-btn-primary ant-btn-sm"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Reset
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️2倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️3倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️4倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️5倍
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="video-item"
+    >
+      <div
+        className="ant-slider"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="ant-slider-rail"
+          style={Object {}}
+        />
+        <div
+          className="ant-slider-track"
+          style={
+            Object {
+              "left": "0%",
+              "right": "auto",
+              "width": "38.77551020408163%",
+            }
+          }
+        />
+        <div
+          className="ant-slider-step"
+        />
+        <div
+          aria-disabled={false}
+          aria-valuemax={5}
+          aria-valuemin={0.1}
+          aria-valuenow={2}
+          className="ant-slider-handle"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="slider"
+          style={
+            Object {
+              "left": "38.77551020408163%",
+              "right": "auto",
+              "transform": "translateX(-50%)",
+            }
+          }
+          tabIndex={0}
+        />
+        <div
+          className="ant-slider-mark"
+        />
+      </div>
+      <div
+        className="rate-wrapper"
+      >
+        <button
+          className="ant-btn ant-btn-primary ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Reset
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️2倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️3倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️4倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️5倍
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="video-item"
+    >
+      <div
+        className="ant-slider"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="ant-slider-rail"
+          style={Object {}}
+        />
+        <div
+          className="ant-slider-track"
+          style={
+            Object {
+              "left": "0%",
+              "right": "auto",
+              "width": "59.183673469387756%",
+            }
+          }
+        />
+        <div
+          className="ant-slider-step"
+        />
+        <div
+          aria-disabled={false}
+          aria-valuemax={5}
+          aria-valuemin={0.1}
+          aria-valuenow={3}
+          className="ant-slider-handle"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="slider"
+          style={
+            Object {
+              "left": "59.183673469387756%",
+              "right": "auto",
+              "transform": "translateX(-50%)",
+            }
+          }
+          tabIndex={0}
+        />
+        <div
+          className="ant-slider-mark"
+        />
+      </div>
+      <div
+        className="rate-wrapper"
+      >
+        <button
+          className="ant-btn ant-btn-primary ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Reset
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️2倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️3倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️4倍
+          </span>
+        </button>
+        <button
+          className="ant-btn ant-btn-default ant-btn-sm"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            ✖️5倍
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+`;

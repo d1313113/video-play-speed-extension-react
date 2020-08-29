@@ -1,0 +1,18 @@
+@import "../../scss/theme/var";
+
+.tips-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: $--color-black;
+  background: linear-gradient(to bottom, rgba(247, 249, 253, .3) 0%, rgba(229, 229, 229, .3) 100%);
+  padding: 15px 0 30px;
+  z-index: 10;
+  .tips {
+    font-size: $--size-middle;
+    padding-bottom: 10px;
+  }
+  .icon-tips {}
+}

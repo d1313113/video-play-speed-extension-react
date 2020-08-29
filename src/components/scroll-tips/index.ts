@@ -1,0 +1,1 @@
+export { ScrollTips } from "./component";

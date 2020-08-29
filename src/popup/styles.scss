@@ -1,5 +1,13 @@
 .popup-container {
-  min-width: 375px;
-  min-height: 400px;
+  width: 375px;
   display: flex;
+  box-sizing: border-box;
+  background: url("../assets/header.png") no-repeat, #F6F9FD;
+  background-size: 375px 280px;
+  padding-top: 20px;
+}
+
+.container {
+  width: 100vw;
+  position: relative;
 }
