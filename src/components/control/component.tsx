@@ -1,12 +1,16 @@
 import React, { FC } from "react";
-import "./styles.scss";
 import { Slider, Button } from "antd";
+import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
+import { VideoStatus } from "@/content-script/actions/videosPlaybackRate";
+import "./styles.scss";
 
 const RATES = [1, 2, 3, 4, 5];
 
-interface ControlProps {
-  videoList: number[];
+export interface ControlProps {
+  videoList: VideoStatus[];
   onSetRate: (idx: number, value: number) => Promise<void>;
+  onPlay: (idx: number) => Promise<void>;
+  onPause: (idx: number) => Promise<void>;
 }
 
 export const Control: FC<ControlProps> = (props: ControlProps) => {
@@ -24,7 +28,7 @@ export const Control: FC<ControlProps> = (props: ControlProps) => {
     <main className="control">
       <div className="title">可拖动step调整速度</div>
       <section className="control-main">
-        {videoList.map((vRate, index) => (
+        {videoList.map((item, index) => (
           <div className="video-item" key={index}>
             <Slider
               onChange={(value: number): void =>
@@ -34,16 +38,27 @@ export const Control: FC<ControlProps> = (props: ControlProps) => {
               max={5}
               step={0.1}
               defaultValue={1}
-              value={vRate}
+              value={item.playbackRate}
             />
             <div className="rate-wrapper">
+              {item.paused ? (
+                <PlayCircleOutlined
+                  className="icon-control"
+                  onClick={(): Promise<void> => props.onPlay(index)}
+                />
+              ) : (
+                <PauseCircleOutlined
+                  className="icon-control"
+                  onClick={(): Promise<void> => props.onPause(index)}
+                />
+              )}
               {RATES.map(rate => (
                 <Button
                   key={rate}
                   onClick={(): void => handleClickRate(index, rate)}
                   size="small"
                   type={rate === 1 ? "primary" : "default"}
-                  disabled={rate === vRate}
+                  disabled={rate === item.playbackRate}
                 >
                   {rate === 1 ? "Reset" : `✖️${rate}倍`}
                 </Button>

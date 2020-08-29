@@ -1,23 +1,43 @@
 import { browser } from "webextension-polyfill-ts";
 import {
-  GET_VIDEOS_PLAYBACK_RATE,
-  getVideosPlaybackRate,
-  SET_VIDEO_PLAYBACK_RATE,
+  actionTypes,
+  getVideosStatus,
+  setVideoPause,
+  setVideoPlay,
   setVideoPlaybackRate
 } from "./actions/videosPlaybackRate";
 import MessageSender = chrome.runtime.onMessage;
 
 browser.runtime.onMessage.addListener(
   // @ts-ignore
-  (request: any, sender: MessageSender, sendResponse) => {
+  (
+    request: { idx: number; action: string; value?: number },
+    sender: typeof MessageSender,
+    // @ts-ignore
+    sendResponse
+  ) => {
     switch (request.action) {
-      case GET_VIDEOS_PLAYBACK_RATE:
-        sendResponse(getVideosPlaybackRate());
+      case actionTypes.GET_VIDEOS_STATUS:
+        sendResponse(getVideosStatus());
         return;
 
-      case SET_VIDEO_PLAYBACK_RATE: {
+      case actionTypes.SET_VIDEO_PLAYBACK_RATE: {
         const { idx, value } = request;
-        setVideoPlaybackRate(idx, value);
+        if (value != null) {
+          setVideoPlaybackRate(idx, value);
+        }
+        return;
+      }
+
+      case actionTypes.SET_VIDEO_PLAY: {
+        const { idx } = request;
+        setVideoPlay(idx);
+        return;
+      }
+
+      case actionTypes.SET_VIDEO_PAUSE: {
+        const { idx } = request;
+        setVideoPause(idx);
         return;
       }
     }

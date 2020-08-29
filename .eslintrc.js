@@ -20,7 +20,8 @@ module.exports = {
       SwitchCase: 1
     }],
     "object-curly-spacing": ["error", "always"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "@typescript-eslint/ban-ts-ignore": "off"
   },
   settings: {
     react: {

@@ -29,6 +29,11 @@
     .rate-wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      .icon-control {
+        font-size: 20px;
+        cursor: pointer;
+      }
     }
   }
 }

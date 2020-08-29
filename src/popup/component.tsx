@@ -3,8 +3,8 @@ import { browser } from "webextension-polyfill-ts";
 import { throttle } from "lodash";
 import getCurrentTab from "@/utils/getCurrentTab";
 import {
-  GET_VIDEOS_PLAYBACK_RATE,
-  SET_VIDEO_PLAYBACK_RATE,
+  actionTypes,
+  VideoStatus,
   $$
 } from "@/content-script/actions/videosPlaybackRate";
 
@@ -15,14 +15,15 @@ import { ScrollTips } from "@/components/scroll-tips";
 import "./styles.scss";
 
 export const Popup: FC = () => {
-  const [videoList, setVideoList] = useState<number[]>([]);
+  const [videoList, setVideoList] = useState<VideoStatus[]>([]);
   const [scrollTop, setScrollTop] = useState<number>(0);
 
   const initPopUp = async (): Promise<void> => {
+    console.log(11111);
     const { id: tabId } = await getCurrentTab();
     if (tabId != null) {
-      const resp /** number[] */ = await browser.tabs.sendMessage(tabId, {
-        action: GET_VIDEOS_PLAYBACK_RATE
+      const resp: VideoStatus[] = await browser.tabs.sendMessage(tabId, {
+        action: actionTypes.GET_VIDEOS_STATUS
       });
       setVideoList(resp);
     }
@@ -36,9 +37,33 @@ export const Popup: FC = () => {
 
     if (tabId != null) {
       await browser.tabs.sendMessage(tabId, {
-        action: SET_VIDEO_PLAYBACK_RATE,
+        action: actionTypes.SET_VIDEO_PLAYBACK_RATE,
         idx,
         value
+      });
+      initPopUp();
+    }
+  };
+
+  const handleSetVideoPlay = async (idx: number): Promise<void> => {
+    const { id: tabId } = await getCurrentTab();
+
+    if (tabId != null) {
+      await browser.tabs.sendMessage(tabId, {
+        action: actionTypes.SET_VIDEO_PLAY,
+        idx
+      });
+      initPopUp();
+    }
+  };
+
+  const handleSetVideoPause = async (idx: number): Promise<void> => {
+    const { id: tabId } = await getCurrentTab();
+
+    if (tabId != null) {
+      await browser.tabs.sendMessage(tabId, {
+        action: actionTypes.SET_VIDEO_PAUSE,
+        idx
       });
       initPopUp();
     }
@@ -70,11 +95,16 @@ export const Popup: FC = () => {
   return (
     <div className="popup-container">
       <div className="container">
-        <Header />
+        <Header onReload={initPopUp} />
         {!videoList.length ? (
           <EmptyCard />
         ) : (
-          <Control videoList={videoList} onSetRate={handleSetVideoRate} />
+          <Control
+            videoList={videoList}
+            onSetRate={handleSetVideoRate}
+            onPlay={handleSetVideoPlay}
+            onPause={handleSetVideoPause}
+          />
         )}
         {!!videoList.length && videoList.length > 5 && scrollTop < 30 && (
           <ScrollTips />

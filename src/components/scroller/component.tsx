@@ -29,7 +29,7 @@ function executeScript(code: string): void {
       // Executes the script in the current tab
       browser.tabs
         .executeScript(currentTab.id, {
-          code,
+          code
         })
         .then(() => {
           console.log("Done Scrolling");

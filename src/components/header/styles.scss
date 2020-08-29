@@ -1,12 +1,18 @@
 @import "../../scss/theme/var";
 
 .header-wrapper {
-  padding: 20px 0 20px 30px;
+  padding: 20px 30px;
   color: $--color-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .title {
     font-size: $--size-base;
   }
   .sub-title {
     font-size: $--size-mini;
+  }
+  .icon-reload {
+    cursor: pointer;
   }
 }
