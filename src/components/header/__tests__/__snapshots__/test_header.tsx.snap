@@ -23,11 +23,6 @@ exports[`component renders 1`] = `
     className="anticon anticon-reload icon-reload"
     onClick={[Function]}
     role="img"
-    style={
-      Object {
-        "fontSize": "20px",
-      }
-    }
     tabIndex={-1}
   >
     <svg
