@@ -1,7 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "Chrome Extension Starter",
-    "description": "A Chrome Extension starter kit",
+    "name": "video play speed",
+    "homepage_url": "https://github.com/d1313113/video-play-speed-extension",
+    "description": "A browser extension for control video play speed",
     "version": "1.0.0",
     "browser_action": {
         "default_icon": "icon-16.png",
@@ -13,8 +14,21 @@
     },
     "icons": {
         "16": "icon-16.png",
+        "38": "icon-38.png",
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "permissions": ["tabs", "activeTab", "notifications", "http://*/", "https://*/"]
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "notifications",
+        "http://*/", "https://*/",
+        "<all_urls>"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/contentScript.js"]
+        }
+    ]
 }
